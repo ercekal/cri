@@ -14,6 +14,15 @@ module.exports = {
       skill: {
         type: Sequelize.INTEGER
       },
+      skills: {
+        type: Sequelize.TEXT
+      },
+      language: {
+        type: Sequelize.TEXT
+      },
+      resource: {
+        type: Sequelize.TEXT
+      },
       eventDate: {
         type: Sequelize.DATE
       },

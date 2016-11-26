@@ -45,6 +45,9 @@ router.post('/new', function(req, res, next) {
      eventDate: new Date(req.body.date + "T" + req.body.time),
      eventTime: req.body.time,
      location: req.body.location,
+     skills: req.body.skills,
+     language: req.body.language,
+     resource: req.body.resource,
      description: req.body.description,
      SportId: parseInt(req.body.sport_select),
      UserId: req.session.user.id,
@@ -104,7 +107,7 @@ router.post("/:id/requests/new", function(req, res, next) {
 router.get("/getEventLocations", function(req, res, next) {
   var eventLocations = [];
   models.Sport.findAll({}).then(function(sports) {
-    models.Status.find({ where: { name: "Accepted" }}).then(function(status) {
+    models.Status.findAll({}).then(function(status) {
       models.Request.findAll({where: {
         StatusId: status.id
       }}).then(function(requests) {
@@ -123,6 +126,9 @@ router.get("/getEventLocations", function(req, res, next) {
             var eventInfo = "<strong>" + sports[sportIndex].name + "</strong>"
                             + "<br/> Urgency: " + event.skill
                             + "<br/> Date: <strong>" + new Date(event.eventDate).toDateString() + "</strong>"
+                            + "<br/> Skills needed: " + event.skills
+                            + "<br/> Languages needed: " + event.language
+                            + "<br/> Resources needed: " + event.resource
                             + "<br/> Desc: " + event.description
                             + "<br/> <a href='/events/" + event.id
                             + "/show'>Show Event </a>"

@@ -16,7 +16,7 @@
                 <% if (currentUser && currentUser.id != event.UserId && !request) { %>
                   <div class="join_button">
                     <form action="/events/<%= event.id %>/requests/new">
-                      <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Join</button>
+                      <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Support</button>
                     </form>
                   </div>
                 <% } %>
@@ -74,7 +74,7 @@
                   width="600"
                   height="450"
                   frameborder="0" style="border:0"
-                  src="https://www.google.com/maps/embed/v1/place?key=<%= process.env.GOOGLE_API %>&q=<%= event.location %>" allowfullscreen>
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC--GaYayMnjCYtUZcLrjkTVjSlXsB8u6I&q=<%= event.location %>" allowfullscreen>
                 </iframe>
               </div>
             </div>

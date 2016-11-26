@@ -3,6 +3,9 @@ module.exports = function(sequelize, DataTypes) {
   var Event = sequelize.define('Event', {
     location: DataTypes.TEXT,
     skill: DataTypes.INTEGER,
+    skills: DataTypes.TEXT,
+    language: DataTypes.TEXT,
+    resource: DataTypes.TEXT, 
     eventDate: DataTypes.DATE,
     eventTime: DataTypes.TIME,
     description: DataTypes.TEXT,

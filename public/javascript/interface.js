@@ -136,7 +136,7 @@ $(document).ready(function() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
+          zoom: 2,
           center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
         });
         putPinsOnMap(locations, map);
@@ -145,7 +145,7 @@ $(document).ready(function() {
       });
     } else {
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
+        zoom: 2,
         center: new google.maps.LatLng(51.5074, .1278)
       });
       putPinsOnMap(locations, map);
