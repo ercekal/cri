@@ -121,9 +121,9 @@ router.get("/getEventLocations", function(req, res, next) {
             var url = '/static/images/' + sports[sportIndex].name + '.png';
             var minutes = event.eventDate.getMinutes() < 10 ? "0" + event.eventDate.getMinutes() : event.eventDate.getMinutes()
             var eventInfo = "<strong>" + sports[sportIndex].name + "</strong>"
-                            + "<br/> Skill level: " + event.skill
+                            + "<br/> Urgency: " + event.skill
                             + "<br/> Date: <strong>" + new Date(event.eventDate).toDateString() + "</strong>"
-                            + "<br/> Time: <strong>" + event.eventDate.getHours() + ":" + minutes + "</strong>"
+                            + "<br/> Desc: " + event.description
                             + "<br/> <a href='/events/" + event.id
                             + "/show'>Show Event </a>"
             eventLocations.push([event.latitude, event.longitude, url, index+1, eventInfo, event.eventDate.setHours(0,0,0,0,0)])

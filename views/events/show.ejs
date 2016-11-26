@@ -11,7 +11,7 @@
         <div class="page-content">
           <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
-              <h2><%= title %></h2>
+              <h2>Disaster information page</h2>
               <div class="mdl-grid">
                 <% if (currentUser && currentUser.id != event.UserId && !request) { %>
                   <div class="join_button">
@@ -33,11 +33,11 @@
                     <td id="location"><%s = event.location %><%= s.slice(0, s.lastIndexOf(","))%></td>
                   </tr>
                   <tr>
-                    <td scope="row" class="mdl-data-table__cell--non-numeric">Sport</td>
+                    <td scope="row" class="mdl-data-table__cell--non-numeric">Type</td>
                     <td><%= sport.name %></td>
                   </tr>
                   <tr>
-                    <td scope="row" class="mdl-data-table__cell--non-numeric">Skill level</td>
+                    <td scope="row" class="mdl-data-table__cell--non-numeric">Urgency level</td>
                     <td>
                       <% for (var i = 0; i < event.skill; i++) {%>
                         <span class="material-icons">star</span>
@@ -56,7 +56,7 @@
                     <td><%= days[d.getDay()] %> <%= d.getUTCDate();%> <%= months[d.getMonth()];%>, <%= d.getHours() %>:<%= minutes %></td>
                   </tr>
                   <tr>
-                    <td scope="row" class="mdl-data-table__cell--non-numeric">Challenger</td>
+                    <td scope="row" class="mdl-data-table__cell--non-numeric">Creator</td>
                     <td><a href="mailto:<%= owner.email %>?Subject=event"><%= owner.name %></a></td>
                   </tr>
                   <tr>

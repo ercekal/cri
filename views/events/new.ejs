@@ -2,7 +2,7 @@
 <html>
   <head>
     <% include ../partials/head %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%=process.env.GOOGLE_API%>&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC--GaYayMnjCYtUZcLrjkTVjSlXsB8u6I&libraries=places"></script>
   </head>
   <body>
     <!-- Always shows a header, even in smaller screens. -->
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="skill">Please select opponent's skill level</label>
+                      <label for="skill">Please select the urgency level</label>
                       <select id="skill" name="skill">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -52,9 +52,25 @@
                       </div>
                     </div>
                     <div class="form-group">
+                      <label for="description">Needed skills</label>
+                      <br>
+                      <input type="text"  name="skills" placeholder="Needed skills" size="50" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="description">Needed languages</label>
+                      <br>
+                      <input type="text"  name="languages" placeholder="Needed skills" size="50" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="description">Needed resources</label>
+                      <br>
+                      <input type="text"  name="resources" placeholder="Needed skills" size="50" class="form-control">
+                    </div>
+                    <div class="form-group">
                       <label for="description">Description</label>
                       <textarea class="form-control" name="description" placeholder="Do you have any addition?" id="description" rows="8" cols="40"></textarea>
-
                     </div>
                     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Create Event</button>
                     <a href="javascript:history.back();">Cancel</a>
