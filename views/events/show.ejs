@@ -16,8 +16,10 @@
                 <% if (currentUser && currentUser.id != event.UserId && !request) { %>
                   <div class="join_button">
                     <form action="/events/<%= event.id %>/requests/new">
+                      <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Donate</button>
                       <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Support</button>
                     </form>
+                    <img src="/images/share.png" alt="" width="450">
                   </div>
                 <% } %>
                 <% if (currentUser && currentUser.id != event.UserId  && request) { %>
